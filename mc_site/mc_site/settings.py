@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'registration',
+    'bootstrap3',
     'localflavor',
     'BTdUbs',
 ]
