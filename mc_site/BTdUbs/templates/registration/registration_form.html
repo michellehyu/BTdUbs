@@ -27,6 +27,13 @@
       {{ form.email }}
     </p>
     <p>
+      <label for="id_phone">Phone Number:</label>
+      {% if form.phone.errors %}
+        <p class="errors">{{ form.phone.errors.as_text }}</p>
+      {% endif %}
+      {{ form.phone }}
+    </p>
+    <p>
       <label for="id_password1">Password:</label>
       {% if form.password1.errors %}
         <p class="errors">{{ form.password1.errors.as_text }}</p>
