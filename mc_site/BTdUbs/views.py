@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import StoreForm
 
 # Create your views here.
 # Default Welcome Page
@@ -8,4 +9,11 @@ def welcome(request):
     
 # Selection Page for Buyer
 def selection(request):
-    return HttpResponse("Select your place here.")
+    form = StoreForm()
+    return render(request, 'BTdUbs/selection.html', {'form': form})
+#   return HttpResponse("Select your place here.")
+
+# Confirmation Page for Buyer
+def confirmation(request):
+   return HttpResponse("The members have been notified")
+

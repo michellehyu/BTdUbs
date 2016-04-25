@@ -14,7 +14,7 @@ class UserProfile(models.Model):
 def __unicode__(self):
     return self.user.username
 
-class Places(models.Model):
-    place = models.CharField(max_length=1024)
+class Store(models.Model):
+    store_name = models.CharField(max_length=1024)
     url = models.URLField(max_length=1024)
     

@@ -1,0 +1,12 @@
+{% extends "BTdUbs/base.html" %}  
+{% block content %}
+<h1>Welcome Buyer!</h1>
+<h2>Fill out this form to notify everyone that you are going to pick up today</h2>
+<!--<form action="{% url 'BTdUbs:confirmation' %}" method="post">
+-->
+<form action="/store_name/" method="post">
+{% csrf_token %}
+    <label for="store_name">Where are you shopping today?: </label>
+    <input id="store_name" type="text" name="store_name" >
+    <input type="submit" value="OK">
+</form>
