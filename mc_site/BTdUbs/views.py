@@ -5,7 +5,8 @@ from .forms import StoreForm
 # Create your views here.
 # Default Welcome Page
 def welcome(request):
-    return HttpResponse("<h1>Welcome to Buy the Way.</h1>")
+    return render(request, 'BTdUbs/index.html')
+#   return HttpResponse("<h1>Welcome to Buy the Way.</h1>")
     
 # Selection Page for Buyer
 def selection(request):
