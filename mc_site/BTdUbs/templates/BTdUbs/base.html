@@ -2,12 +2,14 @@
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% block bootstrap3_content %}
+{% load staticfiles %}
+<!DOCTYPE html>
 
 <html>
     <head>
-        <title>Buy the Way</title>
         <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="{% static 'css/btdubs.css' %}">
+        <title>Buy the Way</title>
     </head>
     <body>
         <div id="content">
