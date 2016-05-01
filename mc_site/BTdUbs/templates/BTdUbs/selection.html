@@ -1,33 +1,45 @@
 {% extends "BTdUbs/base.html" %}  
 {% block content %}
-<h1>Welcome {{request.user}}</h1>
-<h2>Fill out this form to notify everyone that you are going to pick up today</h2>
+<h1>Buyer Selection</h1>
+<h3>Welcome {{request.user}}!</h3>
+<p>Fill out this form to notify everyone that you are going on a shopping run today</p>
 
 <form class="form-horizontal" role="form" method="post" action="../confirmation/">
 {% csrf_token %}
     <div class="form-group">
-        <label for="id_store_name" class="col-sm-2 control-label">Where are you shopping today?: </label>
+        <label for="id_store_name" class="col-sm-2 control-label">Where are you shopping today? </label>
         <div class="col-sm-10"> {{ form.store_name }} </div>
     </div>
+
     <div class="form-group">
         <label for="id_url" class="col-sm-2 control-label">URL: </label>
         <div class="col-sm-10"> {{ form.url }} </div>
     </div>
+
     <div class="form-group">
         <label for="time_of_pickup" class="col-sm-2 control-label">
-                What time do you want the orders?: </label>
+                What time do you want the orders? </label>
          <div class="col-sm-10">
-             <input id="time_of_pickup" >
+             {{ form.order_time }}
          </div>
     </div>
     <div class="form-group">
-        <label for="recommendation" class="col-sm-2 control-label">Recommendation of the day: </label>
+        <label for="recommendation" class="col-sm-2 control-label">What is your Recommendation of the Day? </label>
         <div class="col-sm-10">
-            <input id="recommendation" type="text" recommendation  ="recommendation" value="Something Yummy">
+             {{ form.recommendation }}
          </div>
     </div>
     
-    <p class="submit"><input type="submit" value="Send email"></p>
+    <div class="form-group">
+        <label for="note" class="col-sm-2 control-label">Note to recipents: </label>
+        <div class="col-sm-10">
+             {{ form.note }}
+         </div>
     </div>
+    
+    <div class="col-md-6"></div>
+    <input type="submit" class="btn btn-default" value="Cancel">
+    <input type="submit" class="btn btn-primary" value="Send email">
+
 </form>
 {% endblock %}
