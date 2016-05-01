@@ -1,0 +1,7 @@
+Hello {{ user }}:
+
+Time to submit your order for {{ store }} today.  {{ name}}'s recommendation of the day is {{ recommendation }}. Make sure you place your order with  {{ name }} by {{ order_time }}.
+
+{{ store }}:{{ url }}
+{{ note }}
+Thanks!

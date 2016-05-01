@@ -7,7 +7,7 @@
 <form class="form-horizontal" role="form" method="post" action="../confirmation/">
 {% csrf_token %}
     <div class="form-group">
-        <label for="id_store_name" class="col-sm-2 control-label">Where are you shopping today? </label>
+        <label for="store_name" class="col-sm-2 control-label">Where are you shopping today? </label>
         <div class="col-sm-10"> {{ form.store_name }} </div>
     </div>
 
