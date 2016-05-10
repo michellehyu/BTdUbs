@@ -15,6 +15,6 @@ def __unicode__(self):
     return self.user.username
 
 class Store(models.Model):
-    store_name = models.CharField(max_length=1024)
+    store_name = models.CharField(max_length=1024, unique=True)
     url = models.URLField(max_length=1024)
     

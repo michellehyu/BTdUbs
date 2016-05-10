@@ -14,7 +14,18 @@ def welcome(request):
 # Selection Page for Buyer
 def selection(request):
     form = StoreForm()
-    return render(request, 'BTdUbs/selection.html', {'form': form})
+    if request.method == "POST":
+        form = StoreForm(request.POST)
+        if form.is_valid():
+            daily_selection = form.save(commit=False)
+            daily_selection.store_name = request.store_name
+            daily_selection.url = request.url
+            daily_selection.save()
+            return HttpResponseRedirect(reverse())
+        else:
+            return HttpResponse("error")
+    else:
+        return render(request, 'BTdUbs/selection.html', {'form': form})
 
 # Confirmation Page for Buyer
 def confirmation(request):
