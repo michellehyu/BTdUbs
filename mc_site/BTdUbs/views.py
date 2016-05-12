@@ -30,10 +30,11 @@ def selection(request):
 # Confirmation Page for Buyer
 def confirmation(request):
     subject = 'BuyTheWay Order Today'
+    user_name = request.user
     context = {
         'user': 'someone',
         'store': request.POST['store_name'],
-        'name': request.user,
+        'name': user_name,
         'url': request.POST['url'],
         'recommendation': request.POST['recommendation'],
         'order_time': request.POST['order_time'],
@@ -41,9 +42,9 @@ def confirmation(request):
         }
     message = render_to_string('BTdUbs/email/order_email.txt', context)
     print(message)
-    from_email = settings.EMAIL_HOST_USER
+    from_email = User.objects.get(username=user_name).email
     users = User.objects.all()   
-    to_list = [u.email for u in users]
+    to_list = [u.email for u in users if u.email != from_email]
     send_mail(subject,message, from_email, to_list, fail_silently=True)
     # send_mass_mail()
     return HttpResponse("The members have been notified")
