@@ -1,4 +1,7 @@
 h1{
-    color: #FCA205;
+    color: #FF4500;
     font-family: 'Lobster';
+}
+body {
+    padding-left: 15px;
 }
