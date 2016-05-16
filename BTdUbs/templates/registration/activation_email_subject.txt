@@ -1,1 +1,1 @@
-Activate your djangoproject.com account - you have {{ expiration_days }} days!
+Activate your Buy the Way account - you have {{ expiration_days }} days!
