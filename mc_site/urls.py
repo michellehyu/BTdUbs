@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.http import HttpResponseRedirect
 
 urlpatterns = [
-    url(r'^$', include('BTdUbs.urls')),
+    url(r'^btdubs/', include('BTdUbs.urls')),
+    url(r'^$', lambda r: HttpResponseRedirect('btdubs/')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.urls')),
 ]
