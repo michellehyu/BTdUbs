@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^btdubs/', include('BTdUbs.urls')),
     url(r'^$', lambda r: HttpResponseRedirect('btdubs/')),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('registration.urls')),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
