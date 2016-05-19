@@ -6,15 +6,16 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .models import Store
 from .forms import StoreForm
 
-# Create your views here.
 # Default Welcome Page
 def welcome(request):
     return render(request, 'BTdUbs/index.html')
     
 # Selection Page for Buyer
+@login_required
 def selection(request):
     form = StoreForm()
     if request.method == "POST":
