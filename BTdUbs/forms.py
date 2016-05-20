@@ -7,5 +7,5 @@ class StoreForm(forms.ModelForm):
         fields = ('store_name', 'url',)
 
     order_time = forms.TimeField(widget=forms.TimeInput(format='%h:%M'))
-    recommendation = forms.CharField(initial="Something Yummy")
-    note = forms.CharField(widget=forms.Textarea)
+    recommendation = forms.CharField(initial="Something Yummy", required=False)
+    note = forms.CharField(widget=forms.Textarea, required=False)
