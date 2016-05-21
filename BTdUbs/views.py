@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template.loader import render_to_string
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Store
@@ -45,10 +46,6 @@ def selection(request):
             users = User.objects.all()   
             to_list = [u.email for u in users if u.email != from_email]
             send_mail(subject,message, from_email, to_list, fail_silently=True)
-            return HttpResponse("The members have been notified")
-
-        else:
-            return render(request, 'BTdUbs/selection.html', {'form': form})
-    else:
-        return render(request, 'BTdUbs/selection.html', {'form': form})
+            messages.success(request, "The members have successfully been notified")
+    return render(request, 'BTdUbs/selection.html', {'form': form})
 
