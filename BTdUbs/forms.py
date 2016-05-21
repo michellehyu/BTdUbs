@@ -9,3 +9,6 @@ class StoreForm(forms.ModelForm):
     order_time = forms.TimeField(widget=forms.TimeInput(format='%h:%M'))
     recommendation = forms.CharField(initial="Something Yummy", required=False)
     note = forms.CharField(widget=forms.Textarea, required=False)
+
+class OrderForm(forms.Form):
+    order = forms.CharField(widget=forms.Textarea)

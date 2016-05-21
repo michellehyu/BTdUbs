@@ -6,4 +6,5 @@ Time to submit your order for {{ store }} today.  {{ name }}'s recommendation of
 
 Note from {{ name }}: {{ note }}
 
+Click here to place order: {{ order_url }}
 Thanks for using Buy the Way!

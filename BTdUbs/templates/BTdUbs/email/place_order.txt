@@ -1,0 +1,8 @@
+Hello Today's Shopper!
+
+{{ user }} is placing the following order:
+
+
+{{ order }}
+
+Thanks for shopping for us today!
