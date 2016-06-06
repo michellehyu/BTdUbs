@@ -1,6 +1,6 @@
 started='pgrep gunicorn'
 if [[ -n $started ]]; then
-  gunicorn mc_site.wsgi 
+  gunicorn -b 0.0.0.0:8080 mc_site.wsgi 
 else
   sudo pkill -HUP -f  gunicorn
 fi

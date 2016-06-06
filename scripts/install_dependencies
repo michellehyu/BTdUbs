@@ -1,1 +1,1 @@
-pip install -r /home/ec2-user/requirements.txt
+sudo pip install -r /home/ec2-user/requirements.txt
