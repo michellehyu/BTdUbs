@@ -1,5 +1,6 @@
 started='pgrep gunicorn'
 if [[ -n $started ]]; then
+  cd /home/ec2-user/
   /usr/local/bin/gunicorn -b 0.0.0.0:8080 mc_site.wsgi 
 else
   sudo pkill -HUP -f  gunicorn
