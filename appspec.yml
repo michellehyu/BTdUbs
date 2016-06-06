@@ -2,7 +2,7 @@ version: 1.0
 os: linux 
 files:
   - source: BTdUbs  
-  destination: /home/ec2-user/
+    destination: /home/ec2-user/
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies
