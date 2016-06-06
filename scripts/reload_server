@@ -1,7 +1,7 @@
 started='pgrep gunicorn'
 if [[ -n $started ]]; then
   cd /home/ec2-user/
-  nohup /usr/local/bin/gunicorn mc_site.wsgi </dev/null >/dev/null 2>&1
+  /usr/local/bin/gunicorn mc_site.wsgi&
 else
   sudo pkill -HUP -f  gunicorn
 fi
