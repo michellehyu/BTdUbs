@@ -1,0 +1,9 @@
+sudo yum update
+sudo yum install python34 python34-setuptools python34-pip gcc postgresql-devel python34-devel ruby wget
+sudo alternatives --set python /usr/bin/python3.4
+sudo alternatives --set pip3 /usr/bin/pip-3.4
+cd /home/ec2-user
+wget https://aws-codedeploy-ap-northeast-1.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent status
